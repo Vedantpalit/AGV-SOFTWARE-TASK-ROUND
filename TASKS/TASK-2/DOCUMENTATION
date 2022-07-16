@@ -6,7 +6,7 @@ TASK 2 --
 2-D Line Fitting:
 
 APPROACH:
- - The Black dots are detected as keypoints using an ORB detector, and the coordinates are retrieved (One possible fallacy - multiple keypoints detected in the same region)
+ - The Black dots are detected as keypoints using an ORB detector from the grayscaled image, and the coordinates are retrieved (One possible fallacy - multiple keypoints detected in the same region)
  - The coordinates are stored in two arrays of x-coordinates and y-coordinates
  - Using LinearRegression from sklearn in an attempt to find best fit line, however the best fit line is not found
  - Using ransac from skimage to use the RANSAC Regression on the given scatter plot
@@ -14,3 +14,21 @@ APPROACH:
  - Using 1-e as 0.7, s as 4, with a target to obtain p as 99.99%, we obtain the number T as 26.
  - So in the ransac function, we set the above as the needed parameters to get to the best fit line
  - The line is then plotted on the original scatter plot
+
+Image Stitching:
+
+Used Two approaches to do the stitching: K-Nearest Neighbour Method and Brute Force Matching
+
+Common approach:
+ - The two halves of the images are read together and converted to grayscale
+ - To find the points to be matched, the SIFT detector is used to detect the keypoints of the images
+ - Following this two approaches are used ----
+ KNN approach: The K- Nearest Neighbour Approach matches similar keypoints in one images to K keypoints in the other image
+ - In program, k=2 is used so there is one best match, and one second best match
+ - Using Lowe's ratio test where ratio is taken as 0.5, the best knn matches are found and added to an array
+ - KnnMatcher is used to draw the correlations from image 1 to image 2
+ - Following this, the Homography matrix is calculated with 8 degrees of freedom using the findHomography function
+ - The Homography matrix to transform image 2 to the plane of image 1, followed by resizing to obtain a properly stitched image
+ BRUTE FORCE approach : Correlations are made from all similar keypoints to all similar keypoints from image 1 to image 2
+ - The Homography matrix is calculated by this method following by the transformations to obtain the stitched image.
+ 
