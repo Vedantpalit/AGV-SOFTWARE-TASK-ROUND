@@ -1,5 +1,13 @@
 TASK 2 --
   A| 2-D LINE FITTING
   B| IMAGE STITCHING
-																													****************************************
-																											
+
+
+2-D Line Fitting:
+
+APPROACH:
+ - The Black dots are detected as keypoints using an ORB detector, and the coordinates are retrieved (One possible fallacy - multiple keypoints detected in the same region)
+ - The coordinates are stored in two arrays of x-coordinates and y-coordinates
+ - Using LinearRegression from sklearn in an attempt to find best fit line, however the best fit line is not found
+ - Using ransac from skimage to use the RANSAC Regression on the given scatter plot
+ - 
