@@ -10,4 +10,7 @@ APPROACH:
  - The coordinates are stored in two arrays of x-coordinates and y-coordinates
  - Using LinearRegression from sklearn in an attempt to find best fit line, however the best fit line is not found
  - Using ransac from skimage to use the RANSAC Regression on the given scatter plot
- - 
+ - From the RANSAC algorithm - log[(1-p)/(1-(1-e)^s)]= T, so T is the number of trials needed to find the robust line, 1-e: inlier ratio , p is probability of atleast one random sample free from outliers
+ - Using 1-e as 0.7, s as 4, with a target to obtain p as 99.99%, we obtain the number T as 26.
+ - So in the ransac function, we set the above as the needed parameters to get to the best fit line
+ - The line is then plotted on the original scatter plot
