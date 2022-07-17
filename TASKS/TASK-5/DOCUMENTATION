@@ -1,1 +1,11 @@
+TASK 5 --
+  A| KALMAN FILTER
 
+
+KALMAN FILTER:
+
+APPROACH:
+> Sources studied from : https://youtube.com/playlist?list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT
+- Initiated the program, by reading the text file into a dataframe using pandas
+- After the dataframe is created, consisting of x_position,y_position,x_velocity,y_velocity
+- 
