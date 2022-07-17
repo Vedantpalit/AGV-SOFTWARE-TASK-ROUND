@@ -8,3 +8,22 @@ TASK 3 --
 SEGMENTATION MAPS OF LANES
 
 APPROACH:
+- High Illumination Images are taken as input, followed  by conversion to grayscale
+- A gaussian blur is applied to smoothen the image and reduce noise (reason being, allowing noise to persist causes issues in edge detection)
+- Next, Canny Edge detection method is used to obtain the edges of the images
+- Now, a polygonal mask is created which is implemented onto the canny image to obtain the lane of the image
+- The contours on the image is found to implement a bright colour on to the lanes and dark colour on the rest of the image
+leftover:
+- Colouring every pixel of the lane as bright, and the rest dark
+
+GAMMA CORRECTION
+
+APPROACH:
+> The papers used : 
+    { https://www.researchgate.net/publication/214781523_Understanding_the_Gamma_Adjustment_of_Images
+    { An adaptive gamma correction for image enhancement - Shanto Rahman, Md Mostafijur Rahman, M. Abdullah-Al-Wadud, Golam Dastegir Al-Quaderi & Mohammad Shoyaib 
+- Transformation formula -- O = I^(gamma) : O is output image, I is input image and gamma is the correction factor
+- If gamma is greater than 1, the Output image has lower brightness whereas when gamma is lesser than 1 the Output image has higher brightness
+- Using logarithmic transformations, we input the lower brightness and higher brightness image to obtain the value of gamma
+- After this, the corresponding gamma is inversed to convert the higher brightness images into the lower brightness images
+
