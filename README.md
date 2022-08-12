@@ -1,5 +1,5 @@
-# AGV-SOFTWARE-TASK-ROUND
-This Repo contains all the codes to the tasks I have done for the AGV Software Team Task Round. The existing files are the basic codes I wrote to be submitted, however I will be adding newer and modified versions of my codes, as I perfect them with time.
+# AUTONOMOUS DRIVING TASKS
+This Repo contains all the codes to the tasks I have done based around the various components involved in autonomous driving. The existing files are the basic codes I wrote to be submitted, however I will be adding newer and modified versions of my codes, as I perfect them with time.
 
 LAST DATE MODIFIED: 15/07/2022
 | TASK NUMBERS INCLUDED --- 2,3(A,D),5:
